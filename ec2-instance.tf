@@ -1,7 +1,7 @@
 resource "aws_instance" "ec2_instance" {
     #instance_type = var.t2_micro
-    #instance_type = var.instance_type_list[0] # For list
-    instance_type = var.instance_type_map["prod"] #This is for mapping 
+    instance_type = var.instance_type_list[0] # For list
+    #instance_type = var.instance_type_map["prod"] #This is for mapping 
 
     ami = data.aws_ami.ec2_ami.id
     user_data = file("${path.module}/http-install.sh")
